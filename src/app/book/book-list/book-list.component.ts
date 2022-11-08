@@ -11,6 +11,15 @@ export class BookListComponent implements OnInit {
 
   books: Array<Book> = [];
 
+  selected: Boolean = false;
+
+  selectedBook!: BookDetail;
+
+  onSelected(book: Book): void {
+    this.selected = true;
+    this.selectedBook = book;
+  }
+
   constructor(private bookService: BookService) { }
 
   getBooks(): void {
